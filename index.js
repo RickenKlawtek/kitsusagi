@@ -32,11 +32,15 @@ client.on("message", msg => {
         msg.channel.send(str);
     //    msg.reply("Hellow");
     }
-    // If the message is "what is my avatar"
-    else if (message.content === 'wesh') {
-    // Send the user's avatar URL
-    message.reply(message.author.displayAvatarURL());
-  }
 });
+
+    // Create an event listener for messages
+client.on('message', message => {
+    // If the message is "what is my avatar"
+    if (message.content === 'hey batard mon avatar') {
+      // Send the user's avatar URL
+      message.reply(message.author.displayAvatarURL());
+    }
+  });
 
 client.login(process.env.BOT_TOKEN);
