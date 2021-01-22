@@ -46,6 +46,11 @@ client.on('message', message => {
         let str = "C'est Kitsune <3"
         message.channel.send(str);
       }
+    else if (message.content === 'hey batard') {
+        // Send the user's avatar URL
+        let str = "MOUAHAHAHAHA ';...;'"
+        message.channel.send(str);
+      }
   });
 
 client.login(process.env.BOT_TOKEN);
