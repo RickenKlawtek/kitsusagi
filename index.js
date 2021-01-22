@@ -33,7 +33,7 @@ client.on("message", msg => {
     //    msg.reply("Hellow");
     }
     // If the message is "what is my avatar"
-    else if (message.content === 'avatar') {
+    else if (message.content === "avatar") {
     // Send the user's avatar URL
     message.reply(message.author.displayAvatarURL());
   }
