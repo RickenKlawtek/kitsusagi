@@ -41,6 +41,11 @@ client.on('message', message => {
       // Send the user's avatar URL
       message.reply(message.author.displayAvatarURL());
     }
+    else if (message.content === 'C\'est qui la plus belle ?') {
+        // Send the user's avatar URL
+        let str = "C'est Kitsune <3"
+        message.channel.send(str);
+      }
   });
 
 client.login(process.env.BOT_TOKEN);
