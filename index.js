@@ -32,9 +32,6 @@ client.on("message", msg => {
         msg.channel.send(str);
     //    msg.reply("Hellow");
     }
-    else if (command === "server") {
-        msg.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
-    }
 });
 
     // Create an event listener for messages
