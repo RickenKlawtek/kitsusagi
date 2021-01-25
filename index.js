@@ -32,6 +32,65 @@ client.on("message", msg => {
         msg.channel.send(str);
     //    msg.reply("Hellow");
     }
+    
+    else if (message.content.startsWith('kiss')) {
+        // Assuming we mention someone in the message, this will return the user
+        // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
+        const user = message.mentions.users.first();
+        // If we have a user mentioned
+        if (user) {
+          // Now we get the member from the user
+          const member = message.guild.members.resolve(user);
+          // If the member is in the guild
+          if (member) {
+            /**
+             * Kick the member
+             * Make sure you run this on a member, not a user!
+             * There are big differences between a user and a member
+             */
+            member
+                const embed = new MessageEmbed()
+                // Set the title of the field
+                .setTitle('No game, No life, Just a kiss')
+                // Set the color of the embed
+                .setColor(0xff0000)
+                // Set the main content of the embed
+                .setDescription('<@" + user.tag + ">,vous recevez un kiss de <@" + msg.author.id + "> <3');
+                // Send the embed to the same channel as the message
+                .image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
+                message.channel.send(embed);
+              .then(() => {
+                // We let the message author know we were able to kick the person
+                message.channel.send(`Successfully kicked ${user.tag}`);
+              })
+              .catch(err => {
+                // An error happened
+                // This is generally due to the bot not being able to kick the member,
+                // either due to missing permissions or role hierarchy
+                message.channel.send('ERROR oO Fuck !');
+                // Log the error
+                console.error(err);
+              });
+          } else {
+            // The mentioned user isn't in this guild
+            message.channel.send("Cette personne n'existe que dans vos rêves.. THIS A GHOST BITCH !");
+          }
+          // Otherwise, if no user was mentioned
+        } else {
+            
+            const embed = new MessageEmbed()
+            // Set the title of the field
+            .setTitle('No game, No life, Just a kiss')
+            // Set the color of the embed
+            .setColor(0xff0000)
+            // Set the main content of the embed
+            .setDescription('<@" + msg.author.id + ">,vous vous embrassez vous même <3');
+            // Send the embed to the same channel as the message
+            .image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
+            message.channel.send(embed);
+          //message.channel.send("You didn't mention the user to kick!");
+        }
+      }
 });
 
     // Create an event listener for messages
@@ -51,6 +110,36 @@ client.on('message', message => {
         let str = "MOUAHAHAHAHA ';...;'"
         message.channel.send(str);
       }
+    else if (message.content === 'CERVEAU') {
+        // Send the user's avatar URL
+        let str = "TUNNNNEL !!!"
+        message.channel.send(str);
+      }
+    else if (message.content === 'cerveau') {
+        // Send the user's avatar URL
+        let str = "Votre correspondant est injoigagnable !"
+        message.channel.send(str);
+      }
+    else if (message.content === '<3') {
+        // Send the user's avatar URL
+        let str = "Ca sent l'amour ici <3"
+        message.channel.send(str);
+      }
+    else if (message.content === 'kiss') {
+      // We can create embeds using the MessageEmbed constructor
+      // Read more about all that you can do with the constructor
+      // over at https://discord.js.org/#/docs/main/master/class/MessageEmbed
+      const embed = new MessageEmbed()
+        // Set the title of the field
+        .setTitle('No game, No life, Just a kiss')
+        // Set the color of the embed
+        .setColor(0xff0000)
+        // Set the main content of the embed
+        .setDescription('<@" + msg.author.id + "> envoi un kiss <3');
+      // Send the embed to the same channel as the message
+        .image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
+      message.channel.send(embed);
+    }
   });
 
 client.login(process.env.BOT_TOKEN);
