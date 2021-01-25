@@ -33,7 +33,7 @@ client.on("message", msg => {
     //    msg.reply("Hellow");
     }
     
-    else if (message.content.startsWith('kiss')) {
+    else if (message.content.startsWith('!kiss')) {
         // Assuming we mention someone in the message, this will return the user
         // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
         const user = message.mentions.users.first();
@@ -57,20 +57,9 @@ client.on("message", msg => {
                 // Set the main content of the embed
                 .setDescription('<@" + user.tag + ">,vous recevez un kiss de <@" + msg.author.id + "> <3');
                 // Send the embed to the same channel as the message
-                .image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
+                //.image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
                 message.channel.send(embed);
-              .then(() => {
-                // We let the message author know we were able to kick the person
-                message.channel.send(`Successfully kicked ${user.tag}`);
-              })
-              .catch(err => {
-                // An error happened
-                // This is generally due to the bot not being able to kick the member,
-                // either due to missing permissions or role hierarchy
-                message.channel.send('ERROR oO Fuck !');
-                // Log the error
-                console.error(err);
-              });
+              
           } else {
             // The mentioned user isn't in this guild
             message.channel.send("Cette personne n'existe que dans vos rêves.. THIS A GHOST BITCH !");
@@ -86,7 +75,7 @@ client.on("message", msg => {
             // Set the main content of the embed
             .setDescription('<@" + msg.author.id + ">,vous vous embrassez vous même <3');
             // Send the embed to the same channel as the message
-            .image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
+          //  .image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
             message.channel.send(embed);
           //message.channel.send("You didn't mention the user to kick!");
         }
@@ -137,7 +126,7 @@ client.on('message', message => {
         // Set the main content of the embed
         .setDescription('<@" + msg.author.id + "> envoi un kiss <3');
       // Send the embed to the same channel as the message
-        .image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
+      //  .image('https://i.pinimg.com/originals/3c/16/79/3c167989c5623e40ef517ded7e3c44e2.gif');
       message.channel.send(embed);
     }
   });
